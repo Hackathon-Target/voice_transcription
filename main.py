@@ -35,8 +35,9 @@ def transcribe_audio():
     if not setup_ffmpeg():
         return
     
+    
     # 2. Use harvard.wav for transcription
-    audio_file = "harvard.wav"
+    audio_file = "hindi_lang.mpeg"
     
     if not os.path.exists(audio_file):
         print(f"Error: Could not find {audio_file} in the current folder!")
@@ -55,4 +56,4 @@ def transcribe_audio():
     print(result["text"])
 
 if __name__ == "__main__":
-    transcribe_audio()
+    transcribe_audio() 
