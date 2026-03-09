@@ -46,11 +46,13 @@ def transcribe_audio():
     print(f"Found audio file: {audio_file}")
 
     print("Loading model... please wait.")
-    model = whisper.load_model("base")
+    model = whisper.load_model("medium")
 
     print("Transcribing... this may take a moment.")
     # 3. Added fp16=False to prevent the CPU warning you saw earlier
-    result = model.transcribe(audio_file, fp16=False)
+    model = whisper.load_model("medium")
+
+    result = model.transcribe("pure_hindi.mpeg",task="transcribe",language="hi",fp16=False)
 
     print("\n--- Transcription Result ---")
     print(result["text"])
